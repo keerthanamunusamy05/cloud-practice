@@ -3,7 +3,8 @@ name: Deploy Website
 on: 
   push:
      branches:
-        -main
+        - main
+  workflow_dispatch:      
 
 jobs:
   terraform:
