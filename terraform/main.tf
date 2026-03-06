@@ -27,6 +27,12 @@ index_document {
      cached_methods = ["GET","HEAD"]
      target_origin_id = "s3origin"
      viewer_protocol_policy = "redirect-to-https"
+     forwarded_values {
+       query_string = false
+       cookies {
+         forward = "none"
+       }
+     }
    }
    default_root_object = "index.html"
    restrictions {
