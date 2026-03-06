@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "websitebucket" {
-    bucket = "keerthanademo-website-route53"
+    bucket = "keerthanademo-website-cf-2026"
 
 tags = {
     name = "Static Website"
