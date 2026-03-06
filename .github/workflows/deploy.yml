@@ -32,4 +32,10 @@ jobs:
         run: |
           cd terraform 
           terraform apply -auto-approve
+
+      - name: Upload website to S3
+        run: aws s3 sync website/ s3://keerthanademo-website-cf-2026
+
+      - name: Invalidate cloudfront cache
+        run: aws cloudfront create-invalidation --distribution-id E4T69PYG27S2Z --paths "/*"
           
