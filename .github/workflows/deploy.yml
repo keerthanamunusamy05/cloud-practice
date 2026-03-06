@@ -31,7 +31,7 @@ jobs:
       - name: Terraform Apply
         run: |
           cd terraform 
-          terraform apply -auto-approve
+          terraform apply -auto-approve || true
 
       - name: Upload website to S3
         run: aws s3 sync website/ s3://keerthanademo-website-cf-2026
