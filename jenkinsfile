@@ -1,0 +1,33 @@
+pipeline {
+    agent any
+    
+    triggers {
+        pollSCM('* * * * *')   // Checks Git for changes every minute
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/<username>/<repo>.git'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                sh 'echo Build step'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                sh 'echo Test step'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                sh 'echo Deploy step'
+            }
+        }
+    }
+}
